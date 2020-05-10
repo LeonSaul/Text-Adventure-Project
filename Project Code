@@ -1,0 +1,267 @@
+# Text Adventure Game 3 Story's
+# Made By: Saul Leon
+# --------------------- Updates-------------------------------------
+# Got Rid of all the code and re-organized it to work right.
+# Cleaned out all unused code.
+# Restructured branches and options.
+# Note: Code was moved to a word doc and copy/pasted back in.
+hp: int = 5
+hpf: int = 4
+# The following code below is how the text adventure begins. Below the name is used throughout the story.
+name = input("Before we start. What's your name?")
+
+# Name is printed and used for players name. Name.capitalize makes the first letter capital.
+print("Hey, %s, What story would you like to play?" % name.capitalize())
+# Story options to choose from 4 has been taken out due to time.
+print("1.) Zombie Apocalypse: Because why not. Wake up inside Fort Grental, in this Zombie infested world.\n") #Quick note this is short and from a girls perspective.
+print("2.) Supernatural: You are the leader of a small team exploring the abandoned mansion.\n")
+print("3.) Mystery: You're a child in an complex, you and two friends plan to escape alive. Can you succeed?\n")
+# print("4.) Random: Survive against a singing assassin (yes he sings). Based on player choice, this story can blend into any of the above.\n")
+# Based on the number the player inputs that will determine what story they play-through.
+print("Choose an option by inputting the number followed by hitting enter. Ex: 3 [Enter] = Mystery")
+# Code used to decide choice input.
+story = int(input())
+# This is the intro to the Zambie story, it's the shortest story in the game because I'm not a huge fan of this franchise.
+if story == 1: #Zambie Story Branch.
+    # How the story starts it's really just text.
+    # There might be other ways to display text without this many print statements but it's the only way I know.
+    print("Awake you find yourself in an abandoned Fort. You feel around the area and sense a warm flesh next to you.")
+    print("Quickly you spring up from the ground and notice a guy your age laying down beside you.\n")
+    print("He's wearing a warm sweater and has messy brown hair. He gets up knowing very well that you are now awake.")
+    print("Hey, looks like you finally got up. I was starting to think you were really dead; I guess you can count your \nlucky stars for that. He says looking at you.")
+    print("What will you do?")
+    print("1.) Ask who he is")
+    print("2.) Ask why he was laying next to you")
+    # Allows the player to insert their command when prompted.
+    option = int(input())
+    if option == 1:
+        print("Gah! Right I gotta be formal and all that, okay my name is Cody nice to meet you. He says.")
+    elif option == 2:
+        print("Well I can't let you die of a cold right? he states.")
+        print("Look I know it's weird for a guy like me; heck let alone a stranger to walk right in and do that to you but \nthere's just not alot of us left. Erm...My names Cody by the way.\n")
+        # If player decides to insert anything else that is not an option the game forcefully ends and this message pops up
+    else:
+        print('Not a valid option: Restarting Game.')
+        # Otherwise after that the game continues.
+    print("You tell Cody your name as well, but also notice a bigger situation going on.")
+    print("After a small chat the two of you leave the room and decide to find an escape from the abandoned fort. You decide to follow Cody until you encounter your first Zambie who's \nconveniently blocking the door to your escape.")
+    # Next branch appears here and player has to decide.
+    print("1.) Help Cody fight")
+    print("2.) Hide")
+    option = int(input())
+    if option == 1:
+        print("You grab a water pipe and fight by Cody's side:")
+        print('Type: Attack to attack. \nAnd Guard: To defend.\n')
+        command = input('Battle: Use the following commands to defeat the enemy.\n')
+    #While loop to calculate damage in the battle system. Checks whether hp is less than or equal to 5.
+        while hp <= 5:
+            if command == 'Attack':
+                print("You bash the Zambie's head with the pipe.")
+                print("The Zambie staggers almost losing it's balance.")
+                hp = hp - 1 #Everytime they attack 1HP get's taken out of the enemy.
+                if not hp != 0: #When the enemy's HP reaches zero battle ends and story continues.
+                    print("Congrats you survived the battle!\n")
+                    break
+                else:
+                    command = input('Battle: Use the following commands to defeat the enemy.')
+        #The second command the player can use, protects them from attacks.
+            elif command == 'Guard':
+                print("You protected yourself from the enemy! You got no damage.")
+                command = input('Battle: Use the following commands to defeat the enemy.\n')
+            else: #If you input anything else besides Attack and Guard this happens.
+                print("No valid inputs have been made")
+                command = input('Battle: Please use the following battle commands!')
+                #This is option 2's route which is less interactive.
+    if option == 2:
+        print("You hide for your saftey Cody tells you everything will be okay and fights the Zambie off in your stead. He gets badly injured but not bitten defeating the Zambie \nwhere it stands. Cody offers his hand toward you and you grab it tightly.\n")
+    else: #The "I hate rules!" Obligatory branch.
+        print("Hello! What you see is what you get man.")
+    #After the battle is over the story then continues like this.
+    print("After a few hits the Zambie falls to the ground [insert very brutal image here]. You leave with Cody out of the Fort.")
+    print('Game End: Watcha think?')
+#-----------------------------------------------------------------------------------------------------------------------------------------
+#End the first story Zambie story.
+#------------------------------------------------------------------------------------------------------------------------------------------
+#Beginning of story 2 the supernatural story.
+elif story == 2: #Supernatural Route Begins.
+    print("You arrive at an abandoned mansion after your best friend Casey harassed you to.")
+    print('"Hey %s, I dare you to enter that Mansion in Nolen Forest! Dont worry Ill tag along."You remember her words exactly.' % name.capitalize())
+    print("You stand in front of the Mansion's grand door and take a deep breath. You open the door and step inside only to have a shiver up your spine. \n")
+    print("The place looks old and musty but you see Casey, Ash, and Nate standing in the foyer waiting for you.\n")
+    print("The three of you group up and try to explore the mansion.")
+    print("Alright your the leader here where should we go? Casey says to you.\n What will you do?")
+
+    print("1.) Explore the East Wing.\n")
+    print("2.) Explore the West Wing.")
+    #Allows player to choose an option in this next branch.
+    option = int(input())
+    if option == 1:
+        print("You explore the east wing and spot a mysterious figure, they head down the hall.")
+        print("Yeah, I'm nopeing out of this. Casey says.")
+        print("Looks like we don't have a choice, Ash states as he tries to get the hall door back open. We're locked in!? Casey yells\nNow you are all locked in the hall.")
+        print("Click! The hall begins to shake and the roof begins to close in on you three.")
+        print("Game End")
+    elif option == 2:
+        print("You head to the West Wing there's nothing really going on here but you continue to explore the mansion further.")
+        print("A trap is set off hurting your friends but you all escape well.")
+        print("Game end")
+    else:
+        print("Enter a number!")
+
+elif story == 3: #Mystery Story Route Begins.
+    print("You are a ten year old child in a victorian style house, your two close friends Dylan and Jamie (also 10) are by your side.\nThe three of you decide to make your escape with the other kids.")
+    print("Okay mom's outside but we have a short window, let's come up with a plan quick. Dylan states nervously.")
+    print("We have two options distract 'mom' or find an escape route. We can do both but Dylan needs to get the food and tools. Jamie states.\n")
+    print("Okay %s, what do you want to do? Whatever it is your either buying us time or helping the younger kids escape first.\n" % name.capitalize())
+    print("1.) Find an escape route")
+    print("2.) Create a diversion\n")
+    #Allows player to choose an option in this next branch.
+    branch = int(input())
+    #The find an escape route branch.
+    if branch == 1:
+        print("Really? Jamie says. It isn't much but okay")
+        print("You leave with Jamie, Dylan get's everything else prepared. She shows you to a wall with a hole in it.")
+        print("So, we can escape through this wall or there's an underground route. What do you think?")
+        print("1.) Use the wall\n")
+        print("2.) Use underground route.\n")
+        option = input("What will you do?\n")
+        #Branch happens
+        if option == 1:
+            print("The hole in the wall it is! Jamie says. Okay let's clear this up and wait for Dylan and the other kids.\n")
+            print("The others arrive and you along with the other children escape successfully.")
+            print("Game end: Easy way out ending")
+        elif option == 2:
+            print("Okay so we'll leave through plan b then! She says. Let's gather everyone and leave.")
+            print("The others arrive and you along with the other children escape successfully.")
+            print("Game end: Easy way out ending")
+        else:
+            print("...")
+    print("All done")
+    #Second branch for the Mystery Route. Choose what to do branch.
+    if branch == 2:
+        print("You don't have alot of tools to create a diversion but you think about the most simplist diversion possible a soda blaster.")
+        print("By putting soda in a bottle, capping it off and shaking it violently. It can sound off an explosive sound that can distract the Mistress of the House.")
+        print('%s, What are you doing here? Says a suspicious "man" who approaches you. You decide to fight him.\n' % name.capitalize())
+        print("Your first battle begins, what will you do?")
+        print("Attack\nGuard\nSpecial.")
+        command = input('Battle: Use the following commands to defeat the enemy.\n')
+        #This is a quick battle system for this story section if player enters attack the following below.
+        #Battle System is active while enemy HP is less than or equal to 4.
+        while hpf <= 4:
+            if command == 'Attack':
+                print('You punch the "man" in the chest. Gah! %s, wait let me explain! the "man" says.' % name.capitalize())
+                print("Explain it to my fist! You remark back.\n")
+                print("He begins searching for something in his coat.")
+                hpf = hpf - 1 #Everytime they attack 1HP get's taken out of the enemy
+                if not hpf != 0: #When the enemy's HP reaches zero battle ends and story continues.
+                    print("Battle Ended")
+                    print("Congrats! You dropped kicked your best friend!")
+                    break
+                if hpf <= 1: #The I cry uncle trigger.
+                    print("%s, listen to me! Would you please stop attacking me!?" % name.capitalize())
+                    print("A white flag appears to be raised will you deliver the finishing blow or will you stop?\n")
+                    print("1.) Stop fighting")
+                    print("2.) Deliver final blow.\n")
+                    option = int(input())
+                    if option == 1: #You decide to stop fighting.
+                        print("Dylan takes off his disguise, slightly beaten up but he still smiles at you.")
+                        print("Man you sure know how to protect yourself. It's kinda embarrassing since the other kids at the house say I'm strong. He says.\n ")
+                        break
+                    elif option == 2:
+                        print("You show no mercy as you deliver a final blow. You dropkick the 'man' and he falls over.")
+                        print("Congrats! You dropped kicked your best friend!")
+                        break
+                #Didn't choose 1 or 2? Too bad this happens.
+                else:
+                    command = input('Battle: Use the following commands to defeat the enemy.\n')
+                #The second command the player can use, protects them from attacks.
+            elif command == 'Guard':
+                print("You brace yourself for an incoming attack but the mystery man pats your head.\n")
+                break
+            else:
+                print("Unlike a RPG you're just a ten year old kid without special abilites.")
+                command = input('Battle: Use the following commands to defeat the enemy.\n')
+
+    #Battle System has ended so the story now continues...YAYAYAYYAY!!!
+    print("Hey I wasn't a threat you know, this look is just so that mom doesn't know it's me. %s, you think I look like a real man like this right?" % name.capitalize())
+    print("You look at Dylan with a 'I can't belive this is happening' look and he continues.")
+    print("I was just heading to the kitchen to store some food for the escape. But who knew you were a fighter? Oh I better hurry!")
+    print("Dylan quickly leaves to the kitchen, you head into the masters (mom's) room still with a puzzled look on your face.\n")
+    print("You look around the room but find a cabinet of water bottles and see that it's locked with a code, you can try to crack \nsaid code but it's not going to be easy.\n")
+    #Intro to puzzle for this story. I'm terrible at puzzles in Text Adventures so I thought why the heck not this.
+    #Person imputs what they belive is the right awnser. If not this re-loops until right awnser is made.
+    solve = input('Puzzle: Crack the code:\nSOUGHT IMPRINT MAKE PDEA\n')
+    while solve != 'OMAD':
+    #Check if the right letter combination has been placed.
+        if solve=='OMAD':
+            print("Click! The combonation lock unlocks and falls to the ground.")
+            print("You hope no one actually heard that as you quickly grab a bottle from the cabinet.\n%s, decides to head into the kitchen to find some soda to fill the bottle. However they run into Dylan on the way." % name.capitalize())
+            break
+        else:
+            print("Incorrect try again with all capital letters.")
+            solve = input('Puzzle: Crack the code:\nSOUGHT IMPRINT MAKE PDEA\n')
+            #Puzzle section ends without a sinch.
+    #Story then continues here.
+    print("Click! The combination lock unlocks and falls to the ground.")
+    print("You hope no one actually heard that as you quickly grab a bottle from the cabinet.\n%s, decides to head into the kitchen to find some soda to fill the bottle. However they run into Dylan on the way." % name.capitalize())
+    print("%s, I got some food and water it's good for four days and I hate to say it but I think the Mom is on to us.\nWhat will you say?" % name.capitalize())
+    print("1.) Is there any soda?\n")
+    print("2.) Did you get everything?")
+    #Allows player to prompt input
+    option = int(input())
+    if option == 1:
+        print("Soda? Oh there is some but I think water would be better for our journey right? Dylan replies but you tell him it's for the bottle you have in your hand.")
+        print("Dylan hands you a can of soda and you being pouring it into the bottle.")
+    elif option == 2:
+        print("Yeah, I got everything that would be useful to us. Dylan states.")
+        print("Dylan heads out and you search the kitchen. You find a can of soda in the refrigerator.")
+        #End of else branch
+    else:
+        print("I get it your nervous, but don't worry we'll get through this together. Dylan says to you calmly.")
+        #This then opens up a secret branch that gives you some options. Dylan is good boy so this is just in case you really want to.
+        print("1.) Hug Dylan.")
+        print("2.) Thank Dylan")
+        option = int(input())
+        #Aw you softy!
+        if option == 1:
+            print("You give Dylan a hug out of fear that this plan will fail. He pats your back softly reassuring you.")
+            print("After a few minutes of that embrace, you head into the kitchen to look for a soda to fill the bottle.")
+        # Good for you toughing it out.
+        elif option == 2:
+            print("Hey it's no big deal. Dylan says with a grin on his face, he then runs to regroup with the others.")
+            print("You look at his back while he runs down the hall, feeling a bit guilty for trying to beat him up before. Then you head into the kitchen.")
+        #Guilt tripping you because this is your only chance to hug a friend. Well in this story.
+        else:
+            print("Geeze you don't follow rules. Do you even like this game?")
+        #Secret branch officially ends hurrah!
+    print("You open the fridge and see a can of soda. What will you do?")
+    #Decides how much to fill the bottle use while loop.
+    game1 = input('How much of the bottle will you fill? All or half?\n')
+    while game1 != 'All':
+        if game1=='All':
+            print("You fill the bottle completely and screw on the cap officially the mission begins.\n%s begins to shake the bottle furiously and runs outside to the back of the house." % name.capitalize())
+            print("Jamie returns and Dylan follows as you three regroup.\n")
+            print("The three of you decide to start the plan and so Dylan runs to the other kids and explains the situation.\n Jamie decides to keep watch of the masters movements you unscrew the cap of the bottle and a loud pop echo's.")
+            print("It seems to have caught the masters attention as she walks directly to the source of the noise. You ditch the bottle and stealthy escape to the front of the complex where veryone else is.\n")
+            print("You and the other kids begin to run north to where Jamie has made an escape route for everyone. The master runs after you in an ungodly speed thankfully you all escape.\n")
+            print('Good Ending!: Thank you so much for playing! Did you find the secret branch in this route yet?')
+            #break
+        #If you choose something other than All then this branch happens and the game ends. Yes, even a few minutes can cost you a life.
+        elif game1 == 'Half':
+            print("You slowly fill the bottle halfway it took you a few minutes but it won't cause such a loud pop sound.")
+            print("Suddenly you hear footsteps you turn around but before you can react you see the mistress (mom) staring at you.")
+            print("Ah %s, 'I see so this is what the three of you were planning...'she says catching on quickly, she then stabs you.\n" % name.capitalize())
+            print("You start seeing red everything goes dark and you fall unconscious onto the floor with your eye's shut.")
+            print("The mistress carries you and brings you to the back of the house to where Jamie and Dylan are waiting. Jamie stares in \nshock almost in tears while Dylan looks at the mistress with an angry and disgusted face.")
+            print("She returns the stare with a slight crooked smile towards Dylan.\n")
+            print('Bad End: Sorry friend.\nPlease restart the game to try again.')
+            break
+        else:
+            print('Game End: No Input.')
+    #The second option where this goes.
+
+#Would've been the start to the random last story.
+#elif 4 == story:
+#If input isn't a number or not one of the numbers above this happens.
+else:
+    print("Sorry friend, but that's not an option. Use the numbers available is how this game works. Restart the game and try again.")
