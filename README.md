@@ -1,9 +1,9 @@
 # Text-Adventure-Project
 A Python made Text Adventure. With four different stories that are enjoyable in their own way.
-
+These four different stories all have different lengths and have a change in mechanics. 
 
 #Note: Everything here will be changed. Like alot of the time.
-#
+# Most recent Revision: 2-12-2022
 
 Revision History: 
 --------------------2-12-2022---------------------------
@@ -16,5 +16,5 @@ Reworked Text Adventure code:
   Re-worked Battle System.
   Included New Mechanics.
   
-  --------------------2-12-2022---------------------------
-  
+  --------------------3-10-2021---------------------------
+  Grammar check errors.
