@@ -9,12 +9,13 @@ Revision History:
 --------------------2-12-2022---------------------------
 Full revamp of github portfolio. Because why not? I wanted to revise my work a bit specifically the Text Adventure since I want to make that playable for the public.
 
-Reworked Text Adventure code:
-  Added comments to make the code clear and easy to understand. 
-  Fixed bugs in code.
-  Gave the Text Adventure a proper ending. 
-  Re-worked Battle System.
-  Included New Mechanics.
+Upcoming Changes:
+A rework of Text Adventure code:
+  Add comments to make the code clear and easy to understand. 
+  Fix bugs in code.
+  Give the Text Adventure a proper ending. 
+  Re-work Battle System.
+  Include New Mechanics.
   
   --------------------3-10-2021---------------------------
   Grammar check errors.
